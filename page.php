@@ -17,21 +17,30 @@
 	<main id="primary" class="site-main pt-5 pb-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-				<?php
-		while ( have_posts() ) :
-			the_post();
+				<div class="col-md-9">
+					<?php
+						while ( have_posts() ) :
+							the_post();
 
-			the_content();
+							the_content();
 
-		endwhile; // End of the loop.
-		?>
-
+						endwhile; // End of the loop.
+					?>
+				</div>
+				<div class="col-md-3">
+					<div class="sidebar">
+						<h4>Our Exclusive Tours</h4>
+						<ul>
+							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		
 	</main><!-- #main -->
 
 <?php
