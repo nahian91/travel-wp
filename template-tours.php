@@ -23,14 +23,38 @@ get_header();?>
     <section class="contact-area pt-5 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="">
-                        <h4>WHERE YOU CAN FIND US</h4>
-                        <p>Contact us/Liton Eco Tours Please write as much details as possible about the service you require</p>
-                    </div>
-                </div>
-            </div>
+        <?php 
+                    $args = array(
+                        'post_type' => 'tours',
+                        'posts_per_page' => -1,
+                        'order' => 'ASC'
+                    );
+
+                    $query = new WP_Query($args);
+
+                    while($query->have_posts()) {
+                        $query->the_post();
+                        $tour_place = get_field( "place" );
+                        $tour_duration = get_field( "duration" );
+                    ?>
+                        <div class="col-md-3">
+                            <div class="single-package">
+                                <?php the_post_thumbnail();?>
+                                <h4><?php the_title();?></h4>
+                                <div class="package-meta">
+                                    <span><i class="bx bx-map"></i> <?php echo $tour_place;?></span>
+                                    <span><i class="bx bxs-watch"></i> <?php echo $tour_duration;?></span>
+                                </div>
+                                <div class="package-btn">
+                                    <a href="<?php the_permalink();?>">View Details</a>
+                                    <a href="">Contact Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                ?>
+        </div>
         </div>
     </section>
 <?php get_footer();?>

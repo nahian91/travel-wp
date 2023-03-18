@@ -85,26 +85,7 @@ get_header();?>
             </div>
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="col-md-4">
-                            <input type="number" class="form-control" placeholder="Your Phone">
-                        </div>
-                        <div class="col-12">
-                            <input type="text" class="form-control" placeholder="Your Subject">
-                        </div>
-                        <div class="col-12">
-                            <textarea placeholder="Your Message" class="form-control"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn-box">Send Message</button>
-                        </div>
-                    </form>
+                    <?php echo do_shortcode('[contact-form-7 id="218" title="Contact form 1"]');?>
                 </div>
             </div>
         </div>

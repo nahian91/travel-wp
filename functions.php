@@ -106,6 +106,7 @@ add_action( 'after_setup_theme', 'novena_setup' );
  * Enqueue scripts and styles.
  */
 function novena_scripts() {
+	wp_enqueue_style( 'fonts-bx', '//unpkg.com/boxicons@2.1.4/css/boxicons.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'fonts', '//fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap', array(), _S_VERSION );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'icofont', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), _S_VERSION );
@@ -113,8 +114,65 @@ function novena_scripts() {
 	wp_enqueue_style( 'novena-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'novena-style', 'rtl', 'replace' );
 
+	
+	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), true);
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'novena_scripts' );
+
+
+function sliders_cpt() {
+	$labels = array(
+	  'name'               => _x( 'Sliders', 'post type general name' ),
+	  'singular_name'      => _x( 'Slider', 'post type singular name' ),
+	  'add_new'            => _x( 'Add New', 'Slider' ),
+	  'add_new_item'       => __( 'Add New Slider' ),
+	  'edit_item'          => __( 'Edit Slider' ),
+	  'new_item'           => __( 'New Slider' ),
+	  'all_items'          => __( 'All Sliders' ),
+	  'view_item'          => __( 'View Slider' ),
+	  'search_items'       => __( 'Search Sliders' ),
+	  'not_found'          => __( 'No sliders found' ),
+	  'not_found_in_trash' => __( 'No sliders found in the Trash' ), 
+	  'menu_name'          => 'Sliders'
+	);
+	$args = array(
+	  'labels'        => $labels,
+	  'description'   => 'Holds our products and product specific data',
+	  'public'        => true,
+	  'menu_position' => 5,
+	  'supports'      => array( 'title', 'thumbnail', 'custom-fields' ),
+	  'has_archive'   => true,
+	);
+	register_post_type( 'sliders', $args ); 
+
+
+	$labels = array(
+		'name'               => _x( 'Tours', 'post type general name' ),
+		'singular_name'      => _x( 'Tour', 'post type singular name' ),
+		'add_new'            => _x( 'Add New', 'Tour' ),
+		'add_new_item'       => __( 'Add New Tour' ),
+		'edit_item'          => __( 'Edit Tour' ),
+		'new_item'           => __( 'New Tour' ),
+		'all_items'          => __( 'All Tours' ),
+		'view_item'          => __( 'View Tour' ),
+		'search_items'       => __( 'Search Tours' ),
+		'not_found'          => __( 'No Tour found' ),
+		'not_found_in_trash' => __( 'No Tours found in the Trash' ), 
+		'menu_name'          => 'Tours'
+	  );
+	  $args = array(
+		'labels'        => $labels,
+		'description'   => 'Holds our products and product specific data',
+		'public'        => true,
+		'menu_position' => 5,
+		'show_in_rest' => true,
+		'supports'      => array( 'title', 'thumbnail', 'custom-fields', 'editor' ),
+		'has_archive'   => true,
+	  );
+	  register_post_type( 'tours', $args ); 
+  }
+  add_action( 'init', 'sliders_cpt' );

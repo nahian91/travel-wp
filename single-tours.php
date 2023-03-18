@@ -41,7 +41,7 @@
 							while($query->have_posts()) {
 								$query->the_post();
 						?>
-							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+							<li><a href="<?php the_permalink();?>"><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> <?php the_title();?></a></li>
 						<?php 
 							}
 						?>
