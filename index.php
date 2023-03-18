@@ -91,7 +91,7 @@
         </div>  
     </section>
 
-    <section class="services-area pt-100 pb-100">
+    <section class="services-area pt-100 pb-100" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/services-bg.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -225,13 +225,32 @@
                                     <span><i class="bx bx-map"></i> <?php echo $tour_place;?></span>
                                     <span><i class="bx bxs-watch"></i> <?php echo $tour_duration;?></span>
                                 </div>
-                                <a href="<?php the_permalink();?>">View Details <i class="bx bxs-right-arrow-circle"></i></a>
-                                <a href="">Contact Now <i class="bx bxs-right-arrow-circle"></i></a>
+                                <div class="package-btn">
+                                    <a href="<?php the_permalink();?>">View Details</a>
+                                    <a href="<?php echo esc_url( get_page_link( 47 ) ); ?>">Contact Now</a>
+                                </div>
                             </div>
                         </div>
                     <?php
                     }
                 ?>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="<?php echo esc_url( get_page_link( 23 ) ); ?>" class="view-all-btn">View All Tours</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-area" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/cta-bg.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4>Traveling is not a luxury, it's a necessity.</h4>
+                    <a href="<?php echo esc_url( get_page_link( 23 ) ); ?>">View All Tours</a>
+                    <a href="<?php echo esc_url( get_page_link( 47 ) ); ?>">Contact Now</a>
+                </div>
             </div>
         </div>
     </section>

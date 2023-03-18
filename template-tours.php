@@ -47,7 +47,7 @@ get_header();?>
                                 </div>
                                 <div class="package-btn">
                                     <a href="<?php the_permalink();?>">View Details</a>
-                                    <a href="">Contact Now</a>
+                                    <a href="<?php echo esc_url( get_page_link( 47 ) ); ?>">Contact Now</a>
                                 </div>
                             </div>
                         </div>

@@ -28,14 +28,14 @@ body{
 	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
-	margin: 0 10px;
 	transition: .3s;
 	text-decoration: none;
-	padding: 15px 0;
+	padding: 15px;
   display: block;
 }
   .navbar-nav li a:hover {
-    color: #333;
+    background-color: #333;
+    color: #fff;
   }
   
   .navbar-nav li {
@@ -45,9 +45,7 @@ body{
     position: absolute;
     width: 300px;
     list-style: none;
-    padding: 5px 0;
     background-color: #fff;
-    border: 1px solid #f4f4f4;
     box-shadow: 0 3px 5px -1px rgba(0,0,0,0.1);
     transition: .3s;
     opacity: 0;
@@ -55,18 +53,16 @@ body{
     transform: scaleY(0);
     transform-origin: 0 0 0;
     z-index: 9;
-    top: 55px;
+    top: 54px;
   }
   .navbar-nav li ul li {
     border-bottom: 1px dashed #ddd;
-    margin-bottom: 7px;
-    padding-bottom: 8px;
   }
   .navbar-nav li ul li a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
-    padding: 5px 10px;
+    padding: 10px;
     display: block;
     color: #333;
   }
@@ -598,4 +594,70 @@ top: 5px;
 }
 .carousel-caption a:hover{
   background-color: #333;
+}
+.services-area {
+	background-size: cover;
+	background-position: center;
+}
+.services-area .section-title {
+	color: #fff;
+}
+.view-all-btn {
+  display: inline-block;
+  background-color: green;
+  display: inline-block;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 10px 40px;
+  font-weight: 500;
+  margin-top: 50px;
+  transition: .3s;
+}
+.view-all-btn:hover {
+  background-color: #333;
+}
+
+.cta-area {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: #fff;
+}
+.cta-area h4 {
+  font-size: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.cta-area a {
+  display: inline-block;
+  background-color: green;
+  color: #ffff;
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: .3s;
+}
+.cta-area a:hover {
+  background-color: #333;
+}
+
+.about-img {
+  text-align: left;
+}
+.about-img h4 {
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.about-list ul li {
+  padding-left: 0;
+}
+.about-list ul li b {
+  font-size: 24px;
 }
